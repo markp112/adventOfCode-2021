@@ -6,6 +6,8 @@ import { movementData } from './day-02/movementData';
 import { getDiagnosticReport, processDiagnosticReport, processOxygenAndCo2 } from './day-03/day-03';
 import { findTheLastWinningBoard, getBoardData, playBingo } from './day-04/day-04';
 import {drawNumbers} from './day-04/draw-numbers';
+import { day5Data } from './day-05/data';
+import { calcDangerZones, populateMap } from './day-05/day-5';
 
 function dayOneStep1(): void {
   const numberOfChanges = calcChangeInDepth(oceanDepths);
@@ -51,6 +53,13 @@ function dayFourStep2() {
   console.log('And the last winning cards score is: ', score);
 }
 
+
+function dayFiveStep1() {
+  const ventsMap = day5Data;
+  const plottedMap = populateMap(ventsMap);
+  const dangerZones = calcDangerZones(plottedMap);
+  console.log('The number of danger zones are: ', dangerZones)
+}
 // dayOneStep1();
 // dayOneStep2();
 
@@ -62,7 +71,9 @@ function dayFourStep2() {
 // dayThreeStep1();
 // dayThreeStep2();
 
-dayFourStep2();
+// dayFourStep2();
+
+dayFiveStep1();
 
 function start() {
   const daysToRun: string[] = [];

@@ -8,6 +8,8 @@ import { findTheLastWinningBoard, getBoardData, playBingo } from './day-04/day-0
 import {drawNumbers} from './day-04/draw-numbers';
 import { day5Data } from './day-05/data';
 import { calcDangerZones, populateMap } from './day-05/day-5';
+import { lanternFish } from './day-06/data';
+import { calcPopulationGrowth } from './day-06/day-06';
 
 function dayOneStep1(): void {
   const numberOfChanges = calcChangeInDepth(oceanDepths);
@@ -60,6 +62,13 @@ function dayFiveStep1() {
   const dangerZones = calcDangerZones(plottedMap);
   console.log('The number of danger zones are: ', dangerZones)
 }
+
+function daySixStep1(days: number) {
+  const fishPopulation = lanternFish;
+  const population = calcPopulationGrowth(fishPopulation, days);
+  console.log('%c%s', 'color: #994d75 the population after 80 days is:', population);
+
+}
 // dayOneStep1();
 // dayOneStep2();
 
@@ -73,7 +82,12 @@ function dayFiveStep1() {
 
 // dayFourStep2();
 
-dayFiveStep1();
+// dayFiveStep1();
+
+daySixStep1(80);
+daySixStep1(256);
+
+
 
 function start() {
   const daysToRun: string[] = [];
